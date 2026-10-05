@@ -19,7 +19,8 @@ test('duplicates, late events, scope/session swaps, gaps, and stream replacement
   assert.equal(p.receive({...event,sequence:4}),'resnapshot');assert.equal(p.state,undefined);
   assert.equal(p.receive({...event,sequence:2}),'resnapshot');
   assert.equal(p.receive({...fixture('snapshot'),sequence:5}),'applied');
-  assert.equal(p.receive({...event,sequence:6,streamID:'new'}),'resnapshot');
+  assert.equal(p.receive({...event,sequence:6,streamID:'new'}),'resnapshot');assert.equal(p.state,undefined);
+  assert.equal(p.receive({...event,sequence:6}),'resnapshot');assert.equal(p.state,undefined);
   p.connect({...fixture('welcome'),sessionID:'replacement',streamID:'new'}); assert.equal(p.state,undefined);
   assert.equal(p.receive({...fixture('snapshot'),sessionID:'replacement',streamID:'new'}),'applied');
 });

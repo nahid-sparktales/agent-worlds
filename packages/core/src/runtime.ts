@@ -17,7 +17,7 @@ export class WorldRuntime {
     await this.dispose();
     const generation = ++this.generation;
     this.aborted = false; this.world = world;
-    const cancellation = { get aborted() { return self.aborted || generation !== self.generation; }, onAbort: (fn: () => void) => { if (this.aborted) fn(); else this.abortListeners.add(fn); return () => { this.abortListeners.delete(fn); }; } };
+    const cancellation = { get aborted() { return self.aborted || generation !== self.generation; }, onAbort: (fn: () => void) => { if (this.aborted || generation !== this.generation) fn(); else this.abortListeners.add(fn); return () => { this.abortListeners.delete(fn); }; } };
     const self = this;
     try {
       const check = () => { if (cancellation.aborted) throw new Error('World lifecycle ended'); };

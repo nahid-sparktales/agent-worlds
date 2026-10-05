@@ -11,7 +11,7 @@ export class Projection {
   receive(message: HostSnapshot | HostEvent): ProjectionResult {
     const session = this.session;
     if (!session || message.sessionID !== session.sessionID || message.scopeID !== session.scopeID) return 'ignored';
-    if (message.streamID !== session.streamID) return 'resnapshot';
+    if (message.streamID !== session.streamID) { this.state = undefined; this.needsSnapshot = true; return 'resnapshot'; }
     if (message.sequence <= this.sequence) return 'ignored';
     if (message.type === 'event' && (this.needsSnapshot || message.sequence !== this.sequence + 1)) {
       this.needsSnapshot = true;

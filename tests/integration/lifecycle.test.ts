@@ -41,3 +41,8 @@ test('late callbacks from a disposed/replaced world cannot issue host commands o
   await runtime.load(world,{...context,bridge:{capabilities:['agents.read'],request:async()=>{calls++;return {} as any;}}});
   await runtime.dispose();assert.throws(()=>world.context!.bridge.request('agents.create'),/lifecycle ended/);assert.throws(()=>world.context!.storage.set('cosmetic',true),/lifecycle ended/);assert.equal(calls,0);
 });
+
+test('late abort registration from a replaced world cannot attach to the new lifecycle',async()=>{
+  const runtime=new WorldRuntime(),a=new CounterWorld(),b=new CounterWorld();await runtime.load(a,context);await runtime.load(b,context);
+  let calls=0;a.context!.cancellation.onAbort(()=>calls++);assert.equal(calls,1);await runtime.dispose();assert.equal(calls,1);
+});

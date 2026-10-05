@@ -43,3 +43,9 @@ test('uncertain mutation times out without replay; revoked/disposed sessions cle
 test('missing transport and handshake timeout never activate a mock host',()=>{
   const h=harness();h.client.start();h.tick();assert.equal(h.states.at(-1)[0],'disconnected');assert.equal(h.client.projection.state,undefined);assert.equal(h.sent.length,1);
 });
+
+test('welcome without an authoritative initial snapshot remains bounded by the handshake deadline',()=>{
+  const h=harness();h.client.start();h.receive(fixture('welcome'));h.tick();
+  assert.equal(h.states.at(-1)[0],'disconnected');assert.equal(h.client.projection.state,undefined);assert.equal(h.snapshots.length,0);
+  h.receive(fixture('snapshot'));assert.equal(h.snapshots.length,0);
+});

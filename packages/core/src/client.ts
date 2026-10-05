@@ -62,7 +62,7 @@ export class HostClient {
     if (message.type === 'welcome') {
       if (this.session || message.requestID !== this.helloID) return;
       if (this.options.required.some(c => !message.capabilities.includes(c)) || message.capabilities.some(c => ![...this.options.required,...this.options.optional].includes(c))) { this.disconnect('Required capabilities are unavailable', 'incompatible'); return; }
-      this.handshakeCancel?.(); this.session = message; this.projection.connect(message); this.options.status('connected'); return;
+      this.session = message; this.projection.connect(message); this.options.status('connected'); return;
     }
     const session = this.session;
     if (!session || !('sessionID' in message) || message.sessionID !== session.sessionID || message.scopeID !== session.scopeID) return;
@@ -84,7 +84,7 @@ export class HostClient {
       return;
     }
     if (result === 'applied') {
-      if (message.type === 'snapshot') this.options.snapshot(message); else this.options.event(message);
+      if (message.type === 'snapshot') { this.handshakeCancel?.(); this.options.snapshot(message); } else this.options.event(message);
     }
   }
   disconnect(reason = 'Connection closed', status: ClientStatus = 'disconnected'): void {
