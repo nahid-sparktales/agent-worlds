@@ -1,6 +1,6 @@
 # Locus ↔ Agent Worlds wire protocol 2
 
-Canonical executable schema: `packages/sdk/src/protocol.ts`. Canonical cross-language vectors: `tests/fixtures/wire-v2.json`. Locus vendors a hash-pinned copy and implements the same strict validation. TypeScript types alone are not a validation boundary. Wire 1 retains its old semantics during host transition; wire 2 has no automatic downgrade.
+Canonical executable schema: `packages/sdk/src/protocol.ts`. Canonical cross-language vectors: `tests/fixtures/wire-v2.json`. Locus vendors a hash-pinned copy and implements the same strict validation. TypeScript types alone are not a validation boundary. The extracted host accepts web wire 2 only. A legacy web-v1 plugin requires an explicit upgrade; there is no automatic downgrade. Native Social Studio version 1 is a separate surface and has no world bridge access.
 
 Transport uses the existing `window.webkit.messageHandlers.locusScreen.postMessage` and `window.locusAgentWorld.receive` conventions. Only `plugin/src/transport.ts` knows WebKit. No network transport, iframe messaging, arbitrary selector or file access is added.
 
@@ -43,4 +43,4 @@ Responses correlate request/session/scope and carry either `ok:true,result` or a
 
 Total JSON payload ≤524,288 UTF-8 bytes, nesting ≤8, bounded child counts, finite numbers, printable display strings, exact keys, opaque session tokens ≤80 characters, namespaced preference keys ≤80, preference dictionary ≤32 keys/32 KiB. Capability names remain agents.read / agents.interact / world.preferences. Navigation targets, asset paths and presentation schema are explicitly confined.
 
-The native resource handler preserves local scheme/root checks, one-pass decoding, symlink containment, CSP, external network denial, main-frame-only messaging, popup/navigation/media denial and nonpersistent WebKit storage. Cosmetic persistence therefore uses native namespaced storage, not browser localStorage. A browser test cannot prove this native boundary; the Locus test report records actual WK round trips separately.
+The native resource handler preserves local scheme/root checks, one-pass decoding, symlink containment, CSP, external network denial, main-frame-only messaging, popup/navigation/media denial and nonpersistent WebKit storage. Cosmetic persistence therefore uses native storage scoped to plugin/screen and canonical workspace, not browser localStorage. Reset affects only that active visual namespace. Legacy visual keys are retained for rollback, while canonical agent, conversation and work records stay outside the namespace. A browser test cannot prove this native boundary; the Locus test report records actual WK round trips separately.

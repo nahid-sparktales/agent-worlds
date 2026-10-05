@@ -64,6 +64,13 @@ native UI compatibility.
 The app version number alone is not a compatibility promise. The manifest
 requires host support for screen protocol 2 and runtime 0.2.x negotiation. Older
 hosts reject version 2 explicitly; there is no silent protocol downgrade. Use
-normal Locus Extensions trust review for an eventual real installation. Keep the
+Locus's `Tools/InstallAgentWorldsArtifact.py review` and `install` for a real local
+installation after inspecting the ZIP checksum, file inventory and plugin digest.
+It delegates to the existing manager and requires an explicit legacy-v1 upgrade.
+The opt-in development-directory mode installs an immutable, visibly marked
+snapshot under identical validation and permission rules; it never imports a
+live sibling checkout. Exact commands are in Locus's
+`Docs/agent-worlds-local-install.md`. No native UI ZIP import or automatic release
+installation has been added. Keep the
 prior digest/version available for rollback. Canonical profile/chat data and
 legacy defaults stay owned by Locus.
