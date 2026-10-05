@@ -328,6 +328,11 @@
     "workHint": "Glowing ship: traveling to work. Lit island: working ashore.",
     "selectionHelp": "Follow the selected captain\u2019s ship",
     "placementPrimary": "Ship",
-    "placementSecondary": "Home port"
+    "placementSecondary": "Home port",
+    "emptyTitle": "Your adventure starts here",
+    "welcomeLabel": "WELCOME ABOARD",
+    "welcomeTitle": "All hands on deck",
+    "emptyWorkspaceTitle": "Your crew starts here",
+    "emptyDescription": "Create your first agent to give it a ship and a place on your deck."
   }
 }
