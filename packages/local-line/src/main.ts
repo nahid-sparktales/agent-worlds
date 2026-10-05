@@ -68,6 +68,12 @@ export async function initializeLocalLineUI(options: LocalLineUIOptions): Promis
         el('loading-indicator').hidden = false;
         el('agent-labels').hidden = false;
         el('screen-reader-status').textContent = '';
+        el('project-name').textContent = 'Waiting for Locus';
+        el('project-name').title = '';
+        el('agent-controls-name').textContent = 'Choose a captain or manage your fleet';
+        el('working-count').textContent = 'Calm seas';
+        el('live-label').textContent = 'Waiting for Locus';
+        for (const id of ['resident-count', 'attention-count', 'activity-count', 'activity-working', 'activity-waiting']) el(id).textContent = '0';
         document.querySelector('.controls')?.removeAttribute('hidden');
         document.querySelector('.coordinate-label')?.removeAttribute('hidden');
         document.body.dataset.activityCenter = 'false';
