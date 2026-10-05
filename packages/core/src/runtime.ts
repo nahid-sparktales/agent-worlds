@@ -1,3 +1,5 @@
+import { RUNTIME_VERSION } from '../../sdk/src/protocol.ts';
+import { validateWorldMetadata } from '../../sdk/src/world.ts';
 import type { HostSnapshot, HostEvent } from '../../sdk/src/protocol.ts';
 import type { World, WorldContext } from '../../sdk/src/world.ts';
 /** Serial lifecycle coordinator. Render loops belong to the chosen world. */
@@ -11,13 +13,18 @@ export class WorldRuntime {
   private latest?: HostSnapshot;
   private transition: Promise<void> = Promise.resolve();
   async load(world: World, context: Omit<WorldContext, 'cancellation'>): Promise<void> {
+    if (!validateWorldMetadata(world.metadata, RUNTIME_VERSION)) throw new Error('Incompatible world metadata');
     await this.dispose();
     const generation = ++this.generation;
     this.aborted = false; this.world = world;
     const cancellation = { get aborted() { return self.aborted || generation !== self.generation; }, onAbort: (fn: () => void) => { if (this.aborted) fn(); else this.abortListeners.add(fn); return () => { this.abortListeners.delete(fn); }; } };
     const self = this;
     try {
-      await world.initialize({ ...context, cancellation });
+      const check = () => { if (cancellation.aborted) throw new Error('World lifecycle ended'); };
+      await world.initialize({ ...context, cancellation,
+        bridge: { get capabilities() { return cancellation.aborted ? [] : context.bridge.capabilities; }, request(command, args) { check(); return context.bridge.request(command, args).then(response => { check(); return response; }); } },
+        storage: { get(key) { check(); return context.storage.get(key); }, set(key, value) { check(); return context.storage.set(key, value); }, reset() { check(); return context.storage.reset(); } },
+      });
       if (generation !== this.generation || this.aborted) { await world.dispose(); return; }
       this.initialized = true;
       if (this.latest) world.receiveHostSnapshot(this.latest);
@@ -48,7 +55,7 @@ export class WorldRuntime {
   }
   async dispose(): Promise<void> {
     ++this.generation; this.aborted = true;
-    for (const listener of this.abortListeners) listener(); this.abortListeners.clear();
+    for (const listener of this.abortListeners) { try { listener(); } catch { /* Continue releasing the remaining resources. */ } } this.abortListeners.clear();
     const world = this.world; this.world = undefined; this.latest = undefined; this.initialized = false; this.active = false;
     await this.transition.catch(() => {});
     if (world) { try { await world.deactivate(); } finally { await world.dispose(); } }

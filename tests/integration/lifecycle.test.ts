@@ -35,3 +35,9 @@ test('cancellation remains aborted after a replacement is initialized',async()=>
   const runtime=new WorldRuntime();const a=new CounterWorld(),b=new CounterWorld();await runtime.load(a,context);await runtime.load(b,context);
   assert.equal(a.context?.cancellation.aborted,true);assert.equal(b.context?.cancellation.aborted,false);await runtime.dispose();
 });
+
+test('late callbacks from a disposed/replaced world cannot issue host commands or write storage', async()=>{
+  const runtime=new WorldRuntime(), world=new CounterWorld();let calls=0;
+  await runtime.load(world,{...context,bridge:{capabilities:['agents.read'],request:async()=>{calls++;return {} as any;}}});
+  await runtime.dispose();assert.throws(()=>world.context!.bridge.request('agents.create'),/lifecycle ended/);assert.throws(()=>world.context!.storage.set('cosmetic',true),/lifecycle ended/);assert.equal(calls,0);
+});

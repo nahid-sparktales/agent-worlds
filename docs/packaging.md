@@ -26,7 +26,7 @@ are not redundant app resources or release inputs. All GLBs are checked for
 valid containers, embedded resources and absence of remote decoder requirements.
 The entire installed artifact is below Locus's 250 MiB / 5,000-file limits.
 
-`package` revalidates that directory and creates:
+`package` rebuilds from the current source, revalidates that directory and creates:
 
 - `release/agent-worlds-0.2.0.zip` — a deterministic ZIP with sorted entries and fixed metadata.
 - `release/agent-worlds-0.2.0.zip.sha256` — the exact candidate checksum.
@@ -38,7 +38,6 @@ compressed. Verify its standard archive structure and reproducibility:
 ```sh
 python3 -m zipfile -t release/agent-worlds-0.2.0.zip
 cp release/agent-worlds-0.2.0.zip.sha256 /tmp/agent-worlds-first.sha256
-npm run build
 npm run package
 diff /tmp/agent-worlds-first.sha256 release/agent-worlds-0.2.0.zip.sha256
 ```

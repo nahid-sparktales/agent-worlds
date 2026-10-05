@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "worldID": "local-line",
+  "presentations": {
+    "quarters": {
+      "title": "Captain\u2019s Quarters",
+      "backgroundAsset": "static/captain-deck.webp"
+    },
+    "elbaf": {
+      "title": "Elbaf",
+      "backgroundAsset": "static/quarters-elbaf.webp",
+      "palette": {
+        "colors": {
+          "ink": "#F4F1D9",
+          "inkSoft": "#C1D0B1",
+          "paper": "#172D23",
+          "paperDeep": "#172D23",
+          "panel": "#233D2E",
+          "white": "#36513B",
+          "line": "#6D8154",
+          "lineStrong": "#E4C27D",
+          "muted": "#C1D0B1",
+          "signal": "#E4C27D",
+          "signalDeep": "#E4C27D",
+          "coral": "#EAB59D",
+          "danger": "#F0A39A",
+          "blue": "#A5CEDD",
+          "success": "#A2D7C2",
+          "warning": "#E4C27D",
+          "permissionInk": "#F4F1D9",
+          "permissionMuted": "#C1D0B1",
+          "successSoft": "#244A45",
+          "codeKeyword": "#DDB9CE",
+          "codeType": "#9DD8D1"
+        }
+      }
+    },
+    "marineford": {
+      "title": "Marineford",
+      "backgroundAsset": "static/quarters-marineford.webp",
+      "palette": {
+        "colors": {
+          "ink": "#F0F5FC",
+          "inkSoft": "#BDD0E2",
+          "paper": "#182B42",
+          "paperDeep": "#182B42",
+          "panel": "#243D59",
+          "white": "#365372",
+          "line": "#6988A4",
+          "lineStrong": "#C6DEEF",
+          "muted": "#BDD0E2",
+          "signal": "#C6DEEF",
+          "signalDeep": "#C6DEEF",
+          "coral": "#EAB59D",
+          "danger": "#F0A39A",
+          "blue": "#A5CEDD",
+          "success": "#A2D7C2",
+          "warning": "#C6DEEF",
+          "permissionInk": "#F0F5FC",
+          "permissionMuted": "#BDD0E2",
+          "successSoft": "#244A45",
+          "codeKeyword": "#DDB9CE",
+          "codeType": "#9DD8D1"
+        }
+      }
+    },
+    "water-seven": {
+      "title": "Water 7",
+      "backgroundAsset": "static/quarters-water-seven.webp",
+      "palette": {
+        "colors": {
+          "ink": "#ECF6ED",
+          "inkSoft": "#B8D9D1",
+          "paper": "#133437",
+          "paperDeep": "#133437",
+          "panel": "#204A4C",
+          "white": "#326568",
+          "line": "#639E99",
+          "lineStrong": "#F3BF88",
+          "muted": "#B8D9D1",
+          "signal": "#F3BF88",
+          "signalDeep": "#F3BF88",
+          "coral": "#EAB59D",
+          "danger": "#F0A39A",
+          "blue": "#A5CEDD",
+          "success": "#A2D7C2",
+          "warning": "#F3BF88",
+          "permissionInk": "#ECF6ED",
+          "permissionMuted": "#B8D9D1",
+          "successSoft": "#244A45",
+          "codeKeyword": "#DDB9CE",
+          "codeType": "#9DD8D1"
+        }
+      }
+    },
+    "wano": {
+      "title": "Wano",
+      "backgroundAsset": "static/quarters-wano.webp",
+      "palette": {
+        "colors": {
+          "ink": "#FFF0EE",
+          "inkSoft": "#DEC1D0",
+          "paper": "#302034",
+          "paperDeep": "#302034",
+          "panel": "#462D47",
+          "white": "#61405C",
+          "line": "#9B6E8B",
+          "lineStrong": "#F3B5CE",
+          "muted": "#DEC1D0",
+          "signal": "#F3B5CE",
+          "signalDeep": "#F3B5CE",
+          "coral": "#EAB59D",
+          "danger": "#F0A39A",
+          "blue": "#A5CEDD",
+          "success": "#A2D7C2",
+          "warning": "#F3B5CE",
+          "permissionInk": "#FFF0EE",
+          "permissionMuted": "#DEC1D0",
+          "successSoft": "#244A45",
+          "codeKeyword": "#DDB9CE",
+          "codeType": "#9DD8D1"
+        }
+      }
+    },
+    "drum": {
+      "title": "Drum Island",
+      "backgroundAsset": "static/quarters-drum.webp",
+      "palette": {
+        "colors": {
+          "ink": "#F2F8FF",
+          "inkSoft": "#C9DCEB",
+          "paper": "#233248",
+          "paperDeep": "#233248",
+          "panel": "#30465E",
+          "white": "#435E79",
+          "line": "#819DB4",
+          "lineStrong": "#BDDFF6",
+          "muted": "#C9DCEB",
+          "signal": "#BDDFF6",
+          "signalDeep": "#BDDFF6",
+          "coral": "#EAB59D",
+          "danger": "#F0A39A",
+          "blue": "#A5CEDD",
+          "success": "#A2D7C2",
+          "warning": "#BDDFF6",
+          "permissionInk": "#F2F8FF",
+          "permissionMuted": "#C9DCEB",
+          "successSoft": "#244A45",
+          "codeKeyword": "#DDB9CE",
+          "codeType": "#9DD8D1"
+        }
+      }
+    }
+  },
+  "name": "Local Line",
+  "defaultPresentationID": "quarters",
+  "mapPalette": {
+    "colors": {
+      "ink": "#F4EFDF",
+      "inkSoft": "#D4E0DD",
+      "paper": "#0B2633",
+      "paperDeep": "#102F3D",
+      "panel": "#0D2B39",
+      "white": "#173C4A",
+      "line": "#2B4B57",
+      "lineStrong": "#729298",
+      "muted": "#ACC3C5",
+      "signal": "#E8C381",
+      "signalDeep": "#E8C381",
+      "coral": "#E5AD97",
+      "danger": "#F4A7A0",
+      "blue": "#A5CEDD",
+      "success": "#A2D7C2",
+      "warning": "#E8C381",
+      "permissionInk": "#F0D3A8",
+      "permissionMuted": "#D0C6AA",
+      "successSoft": "#244A45",
+      "codeKeyword": "#D5B2D2",
+      "codeType": "#9DD8D1"
+    }
+  },
+  "appearances": [
+    {
+      "id": "wood",
+      "title": "Wood \u00b7 default",
+      "palette": {
+        "colors": {
+          "ink": "#FFF4DF",
+          "inkSoft": "#E7D1B5",
+          "paper": "#3B271D",
+          "paperDeep": "#2C1E18",
+          "panel": "#4A3123",
+          "white": "#5F402B",
+          "line": "#8A6542",
+          "lineStrong": "#B89162",
+          "muted": "#D6BBA0",
+          "signal": "#F2CB89",
+          "signalDeep": "#EFC27D",
+          "coral": "#EAB59D",
+          "danger": "#F0A39A",
+          "blue": "#B8D4D8",
+          "success": "#BAD19E",
+          "warning": "#F2CB89",
+          "permissionInk": "#F0D3A8",
+          "permissionMuted": "#D0C6AA",
+          "successSoft": "#3C4B30",
+          "codeKeyword": "#DDB9CE",
+          "codeType": "#AED7CF"
+        }
+      }
+    },
+    {
+      "id": "ocean",
+      "title": "Ocean blue",
+      "palette": {
+        "colors": {
+          "ink": "#F4EFDF",
+          "inkSoft": "#D4E0DD",
+          "paper": "#0B2633",
+          "paperDeep": "#102F3D",
+          "panel": "#0D2B39",
+          "white": "#173C4A",
+          "line": "#2B4B57",
+          "lineStrong": "#729298",
+          "muted": "#ACC3C5",
+          "signal": "#E8C381",
+          "signalDeep": "#E8C381",
+          "coral": "#E5AD97",
+          "danger": "#F4A7A0",
+          "blue": "#A5CEDD",
+          "success": "#A2D7C2",
+          "warning": "#E8C381",
+          "permissionInk": "#F0D3A8",
+          "permissionMuted": "#D0C6AA",
+          "successSoft": "#244A45",
+          "codeKeyword": "#D5B2D2",
+          "codeType": "#9DD8D1"
+        }
+      }
+    }
+  ],
+  "styles": [
+    {
+      "id": "ship_thousand_sunny",
+      "name": "Thousand Funny",
+      "previewAsset": "themes/grand-line/references/thousand_sunny.jpg"
+    },
+    {
+      "id": "ship_going_merry",
+      "name": "Going Sherry",
+      "previewAsset": "themes/grand-line/references/going_merry.jpg"
+    },
+    {
+      "id": "ship_baratie",
+      "name": "BaratAI",
+      "previewAsset": "themes/grand-line/references/baratie.jpg"
+    },
+    {
+      "id": "ship_navy_h03",
+      "name": "Navy Q4",
+      "previewAsset": "themes/grand-line/references/navy_h03.jpg"
+    },
+    {
+      "id": "ship_polar_tang",
+      "name": "Polar Tensor",
+      "previewAsset": "themes/grand-line/references/polar_tang.jpg"
+    },
+    {
+      "id": "ship_spade_pirates",
+      "name": "Spade Prompters\u2019 Ship",
+      "previewAsset": "themes/grand-line/references/spade_pirates.jpg"
+    },
+    {
+      "id": "ship_red_force",
+      "name": "Thread Force",
+      "previewAsset": "themes/grand-line/references/red_force.jpg"
+    },
+    {
+      "id": "ship_moby_dick",
+      "name": "Moby Disk",
+      "previewAsset": "themes/grand-line/references/moby_dick.jpg"
+    },
+    {
+      "id": "ship_perfume_yuda",
+      "name": "Perfume CUDA",
+      "previewAsset": "themes/grand-line/references/perfume_yuda.jpg"
+    },
+    {
+      "id": "ship_oro_jackson",
+      "name": "Oro JSON",
+      "previewAsset": "themes/grand-line/references/oro_jackson.jpg"
+    },
+    {
+      "id": "ship_queen_mama_chanter",
+      "name": "Queen Llama Chanter",
+      "previewAsset": "themes/grand-line/references/queen_mama_chanter.jpg"
+    },
+    {
+      "id": "ship_dragons_ship",
+      "name": "Dragon\u2019s Chip",
+      "previewAsset": "themes/grand-line/references/dragons_ship.jpg"
+    },
+    {
+      "id": "ship_mihawk_coffin",
+      "name": "Mihawk\u2019s Coffin Boat",
+      "previewAsset": "themes/grand-line/references/ship_mihawk_coffin.jpg"
+    },
+    {
+      "id": "ship_garp_battleship",
+      "name": "Garp\u2019s Battleship",
+      "previewAsset": "themes/grand-line/references/ship_garp_battleship.jpg"
+    },
+    {
+      "id": "ship_marine_patrol",
+      "name": "Marine Patrol Ship",
+      "previewAsset": "themes/grand-line/references/ship_marine_patrol.jpg"
+    }
+  ],
+  "appearancePreferenceKey": "quarters-appearance",
+  "stylePreferenceKey": "ship-styles",
+  "contextEnabledPreferenceKey": "island-quarters-enabled",
+  "labels": {
+    "workspace": "Captain\u2019s Quarters",
+    "style": "Ship style",
+    "contextShortcut": "Open quarters when clicking islands",
+    "visit": "Visit an island",
+    "appearance": "Captain\u2019s Quarters appearance",
+    "workHint": "Glowing ship: traveling to work. Lit island: working ashore.",
+    "selectionHelp": "Follow the selected captain\u2019s ship",
+    "placementPrimary": "Ship",
+    "placementSecondary": "Home port"
+  }
+}
