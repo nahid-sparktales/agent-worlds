@@ -1,0 +1,57 @@
+{
+  "name": "agent-world",
+  "version": "0.2.0",
+  "description": "Agent Worlds visualizes Locus activity in Local Line.",
+  "author": {
+    "name": "SparkTales"
+  },
+  "license": "Apache-2.0",
+  "interface": {
+    "displayName": "Agent Worlds",
+    "shortDescription": "Explore your agents in Local Line.",
+    "longDescription": "Local Line is an offline ocean world that projects authorized Locus agent activity. Agent profiles, conversations, tools, permissions and execution remain in Locus.",
+    "developerName": "SparkTales",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Open Agent Worlds in Locus.",
+    "iconSmall": "./assets/icon.svg",
+    "iconLarge": "./assets/icon.svg"
+  },
+  "locus": {
+    "screens": [
+      {
+        "id": "agent-world",
+        "title": "Agent Worlds",
+        "entrypoint": "ui/index.html",
+        "version": 2,
+        "capabilities": [
+          "agents.read",
+          "agents.interact",
+          "world.preferences"
+        ]
+      }
+    ]
+  },
+  "agentWorlds": {
+    "runtimeVersion": "0.2.0",
+    "sdkVersion": 1,
+    "bridgeVersion": 2,
+    "preferencesSchema": 2,
+    "compatibleLocus": {
+      "applicationVersionRange": "*",
+      "requiresScreenProtocol": 2,
+      "negotiatedRuntimeRange": ">=0.2.0 <0.3.0",
+      "note": "No application release number establishes compatibility; the host build must explicitly negotiate screen protocol 2 and the runtime range."
+    },
+    "worlds": [
+      "local-line"
+    ],
+    "requiredCapabilities": [
+      "agents.read"
+    ],
+    "optionalCapabilities": [
+      "agents.interact",
+      "world.preferences"
+    ]
+  }
+}

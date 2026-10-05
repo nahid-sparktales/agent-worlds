@@ -1,0 +1,25 @@
+name: Agent Worlds
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.20.0'
+          check-latest: false
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run check
+      - run: node --test tests/packaging/*.test.mjs
+      - name: Verify deterministic clean build and archive
+        run: |
+          cp release/agent-worlds-0.2.0.zip.sha256 /tmp/agent-worlds-first.sha256
+          npm run build
+          npm run package
+          diff /tmp/agent-worlds-first.sha256 release/agent-worlds-0.2.0.zip.sha256
+          python3 -m zipfile -t release/agent-worlds-0.2.0.zip
+      # Publication is deliberately separate: NOTICE records unresolved asset rights.

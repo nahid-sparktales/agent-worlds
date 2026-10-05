@@ -1,0 +1,30 @@
+Agent Worlds / Local Line
+Extracted from Locus, copyright SparkTales and contributors.
+Source baseline: 4cce6ebfaa31f76cd7790967ad8ce7d7e2338deb.
+
+Code and original Locus plugin identification artwork are provided under Apache-2.0;
+see LICENSE. This statement does not grant rights to third-party characters,
+reference images, designs, trademarks, or other underlying artwork.
+
+Babylon.js 9.26.0 is copyright The Babylon.js team, licensed under Apache-2.0.
+Preserved upstream license and notice: plugin/licenses/Babylon-LICENSE.md and
+plugin/licenses/Babylon-NOTICE.md (licenses/ inside the packaged plugin).
+Optional network-loaded decoders and compiler binaries are not packaged.
+
+Local Line is unofficial One Piece fan artwork. One Piece, original character,
+island and ship designs belong to their respective rights holders. Models were
+generated using Meshy from supplied/generated reference artwork. AI-inspired
+labels do not change the artwork's source or imply endorsement. The supplied
+reference collage and generated derivatives have no documented rightsholder
+redistribution license in the source repository. Their publication rights remain
+unverified. A public release requires resolving these asset rights; the local
+candidate archive is not a published release or a representation of clearance.
+
+Model task lineage, costs, source reference hashes and prepared model hashes are
+preserved under packages/local-line/assets/themes/grand-line/provenance.json
+(1,800 Meshy credits) and assets/assets/provenance.json (44 Meshy credits for the
+snail communicator). No generation runs during build or use. Build-in imagegen
+backdrop provenance is in assets/presentation/quarters-artwork.json and
+docs/captains-quarters-source.md. docs/asset-manifest.json identifies exact bytes
+copied from the source. High-resolution private generation sources are not
+required or distributed. Do not infer new rights from generation task receipts.
