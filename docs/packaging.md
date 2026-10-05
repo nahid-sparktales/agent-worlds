@@ -44,9 +44,11 @@ diff /tmp/agent-worlds-first.sha256 release/agent-worlds-0.2.0.zip.sha256
 
 No build step generates assets, requests generation credits, fetches runtime
 resources or publishes a release. `NOTICE` records unverified redistribution
-rights for derivative/reference artwork. The artifact is a local candidate;
-publication needs those rights resolved and all native cutover acceptance gates
-passed. The standalone CI checks build/test/archive behavior and has read-only
+rights for derivative/reference artwork. The artifact is an unpublished local
+delivery; its exact verified checksum and native evidence are recorded in
+[verification](verification.md). Local regression gates passed; publication
+still requires rights clearance and a reviewed release. The standalone CI
+checks build/test/archive behavior and has read-only
 repository permissions; it does not publish.
 
 ## Host installation and rollback rehearsal
