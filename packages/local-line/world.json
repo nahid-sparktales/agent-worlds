@@ -1,0 +1,24 @@
+{
+  "id": "local-line",
+  "name": "Local Line",
+  "version": "0.2.0",
+  "description": "Your agents sail a local ocean, reflecting authorized Locus activity.",
+  "icon": "assets/icon.svg",
+  "minimumAgentWorldsVersion": "0.2.0",
+  "sdkVersion": 1,
+  "entrypoint": "static/world.js",
+  "capabilities": {
+    "required": ["agents.read"],
+    "optional": ["agents.interact", "world.preferences"]
+  },
+  "assets": [
+    "themes/grand-line/theme.json",
+    "assets/models/den-den-mushi.glb",
+    "static/captain-deck.webp",
+    "static/quarters-elbaf.webp",
+    "static/quarters-marineford.webp",
+    "static/quarters-water-seven.webp",
+    "static/quarters-wano.webp",
+    "static/quarters-drum.webp"
+  ]
+}
