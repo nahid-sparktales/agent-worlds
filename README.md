@@ -2,7 +2,7 @@
 
 Agent Worlds is an independent TypeScript/Babylon.js visualization runtime for Locus. Its only production world is **Local Line**. Locus owns agents, chats, work, permissions, providers and native management surfaces. The world owns scenery, movement, decorative controls and disposable display state.
 
-This repository delivers an **unpublished local 0.2.0 artifact**. The Locus thin-host cutover is complete: the old renderer, world assets and generation inputs have been removed from active app inputs, with a verified recovery archive retained. Standalone checks and all 1,989 native app-host tests pass. See [verification](docs/verification.md) for the exact artifact, evidence and limitations. Asset redistribution rights remain unverified; see [NOTICE](NOTICE).
+Source is public at [nahid-sparktales/agent-worlds](https://github.com/nahid-sparktales/agent-worlds). It builds the **0.2.0 plugin artifact**; no GitHub release or npm package has been published. The Locus thin-host cutover is complete: the old renderer, world assets and generation inputs have been removed from active app inputs, with a verified recovery archive retained. Standalone checks and all 1,989 native app-host tests pass. See [verification](docs/verification.md) for the exact artifact, evidence and limitations. Asset redistribution rights remain unverified; see [NOTICE](NOTICE).
 
 Use Node 22.18 or newer (verified with Node 25.5.0):
 
